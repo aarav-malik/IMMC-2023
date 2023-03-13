@@ -1,5 +1,6 @@
 import csv
 import matplotlib.pyplot as plt
+import statistics
 
 file_name = "data/solarenergy.csv" 
  
@@ -77,9 +78,8 @@ CDE_total = total_energy(CDE_hourly)
 I_hourly = hourly_energy_generated(dp_I)
 I_total = total_energy(I_hourly)
 
-AVERAGE_total = [(A_total[i] + B_total[i] + CDE_total[i]+ I_total[i]) / 4 for i in range(len(A_total))]
-print(AVERAGE_total)
-
+DAILYAVERAGE_total = [(A_total[i] + B_total[i] + CDE_total[i]+ I_total[i]) / 4 for i in range(len(A_total))]
+o_average = statistics.mean(DAILYAVERAGE_total)
 # Plotting Graphs of Maximum Energy (kW) against Days
 # Setting up x-axis values
 x_total = []
@@ -91,7 +91,8 @@ plt.plot(x_total, A_total, color="r", linewidth=1, label="A")
 plt.plot(x_total, B_total, color="b", linewidth=1, label="B")
 plt.plot(x_total, CDE_total, color="c", linewidth=1, label="CDE")
 plt.plot(x_total, I_total, color="m", linewidth=1, label="I")
-plt.plot(x_total, AVERAGE_total, color="k", linewidth=1, label="Average")
+plt.plot(x_total, DAILYAVERAGE_total, color="k", linewidth=1, label="Daily Average")
+plt.axhline(y=o_average, color="y", linewidth=1, label="Average")
 
 
 
