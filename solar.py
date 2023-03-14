@@ -85,7 +85,7 @@ o_average = statistics.mean(DAILYAVERAGE_total)
 x_total = []
 for i in range(len(A_total)):
     x_total.append(i+1)
- 
+print(o_average)
 # Plotting a line for each location
 plt.plot(x_total, A_total, color="r", linewidth=1, label="A")
 plt.plot(x_total, B_total, color="b", linewidth=1, label="B")
