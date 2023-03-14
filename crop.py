@@ -17,16 +17,24 @@ for index, crop in crops.iterrows():
     
     crops.at[index, 'Environmental Score'] = total_score
 
-sorted_crops = crops.sort_values('Environmental Score')  ## Beef, Apples, Potatoes, Tomatoes (Due to climate conditions)
+
+"""
+Beef, Apples, Potatoes, Tomatoes (Shortlisted due to climate conditions and demand)
+Beef, Apples, Potatoes and Tomatoes are among NYC's top produce indicating demand. However,
+They are not the topmost produce as the market is usually Saturated and has a lot of competition
+by the most popular produce. 
+"""
+selected = crops[(crops["Food product"] == "Potatoes") | (crops["Food product"] == "Tomatoes")| (crops["Food product"] == "Beef (beef herd)")| (crops["Food product"] == "Apples")]
+profits['Environmental Score'] = selected.iloc[::-1].reset_index(drop=True)['Environmental Score']
+
 ENV_WEIGHT = 0.2
 PROFIT_WEIGHT = 0.8
 
-print(profits['Gross Income Per acre($)'])
 
-""" for index2, profit in profits.iterrows():
-    profit_score = ((profit['Gross Income Per acre($)'])-np.nanmin(profits['Gross Income Per acre($)']))/(np.nanmax(profits["Gross Income Per acre($)"])-np.nanmin(profits['Gross Income Per acre($)']))    
-    crops.at[index, 'Overall Score'] = total_score 
-    overall = 0.2*crops['Environmental Score'] + 0.8*crops['Overall Score'] """
-#print(overall)
+for profit in profits.iterrows():
+     profit_score = ((profits['Gross Income Per acre($)'])-np.nanmin(profits['Gross Income Per acre($)']))/(np.nanmax(profits["Gross Income Per acre($)"])-np.nanmin(profits['Gross Income Per acre($)']))
+     profits['Profits'] = profit_score
+     overall = 0.2*profits['Environmental Score'] + 0.8*profits['Profits']
+     profits['Final Score'] = overall
 
-
+print(profits)
