@@ -1,2 +1,3 @@
-Facilities,expected annual return rate,future present value for year 1,future present value fore year 2,future present value of year 3,future present value of year 4,future present value of year 5,initial invested value
-ex,0.2,100,200,300,400,500,200
+Facilities,profits,future present value for year 1,future present value for year 2,future present value for year 3,future present value for year 4,future present value for year 5,initial invested value
+cross country skiing facility,200000,2000000,2000000,2000000,2000000,2000000,8250000
+outdoor sport complex,305208,1129386,1129386,1129386,1129386,1129386,1600000

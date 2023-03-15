@@ -17,8 +17,18 @@ for salary in salarys.iterrows():
 
 salarys['salary benefits'] = salary_benefits
 #summation function for over all social benefits (Social interaction and Job salary)
-overall_socail_benefits = benefits['Social interaction benefit score'] + salarys['salary benefits']
+overall_social_benefits = benefits['Social interaction benefit score'] + salarys['salary benefits']
 
-benefits['Overall Score'] = overall_socail_benefits
 
-print(benefits)
+
+final_table = pd.DataFrame({})
+final_table['Facility'] = benefits['Facilities']
+final_table['Overall score'] = overall_social_benefits
+
+
+
+for x in final_table.iterrows():
+    normalised_socialbenefits = (final_table['Overall score']-np.nanmin(final_table['Overall score']))/(np.nanmax(final_table['Overall score'])-np.nanmin(final_table['Overall score']))
+    final_table['Normalised Score'] = normalised_socialbenefits
+
+print(final_table)
