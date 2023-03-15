@@ -17,4 +17,4 @@ This is Commonwealth Secondary School's report and code for IM²C 2023.
 </div>
 
 
-Team for 2023: Aarav Malik, Muzzamil Dadeh, Ang Chee Wei, Pua Hong Wei
+Team for 2023: Aarav Malik, Muzzammil Dadeh, Ang Chee Wei, Pua Hong Wei
