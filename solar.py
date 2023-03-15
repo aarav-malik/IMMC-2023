@@ -8,18 +8,14 @@ file = open(file_name)
 file_reader = csv.reader(file)
 dp = list(file_reader)
 
-# Store and remove headers from the data
 headers = dp[0]
 dp = dp[1:]
 
 # The 4 locations where solar panels were installed
 A, B, CDE, I = "CWSS_BLK-A", "CWSS_BLK-B", "CWSS_BLK-CDE", "CWSS_BLK-I"
-# Indexing of values in each item within dp
 TIMEDATE, DP_LOCATION, DP_ENERGY = 0, 1, 2
-# Indexing of values in each item within processed_dp
 TIME, DAY, MONTH, LOCATION, ENERGY = 0, 1, 2, 3, 4
  
-# Handling data types
 processed_dp = []
 for i in range(len(dp)):
     dp[i][DP_ENERGY] = float(dp[i][DP_ENERGY])
@@ -32,7 +28,6 @@ for i in range(len(dp)):
     time = int(time[0])
     processed_dp.append([time, day, month] + dp[i][1:])
 
-# UDF to filter data
 def filter_lst(subject, subject_value, lst):
     result = []
     for i in range(len(lst)):
