@@ -1,3 +1,7 @@
-Facilities,profits,future present value for year 1,future present value for year 2,future present value for year 3,future present value for year 4,future present value for year 5,initial invested value
-cross country skiing facility,200000,2000000,2000000,2000000,2000000,2000000,8250000
-outdoor sport complex,305208,1129386,1129386,1129386,1129386,1129386,1600000
+cross country skiing facility,200000,2000000,200000,200000,200000,200000,200000,200000,200000,200000,200000,200000,8250000
+outdoor sport complex,305208,1129386,305208,305208,305208,305208,305208,305208,305208,305208,305208,305208,1600000
+Regenerative farm,,,,,,,,,,,,,
+Agrivoltic farm,79548,,,,,,,,,,,,
+Solar panel,,,,,,,,,,,,,
+grazing farm,40000,225000,40000,40000,40000,40000,40000,40000,40000,40000,40000,40000,320000
+agritourist centre,8162,20230,10000,10000,10000,10000,10000,10000,10000,10000,10000,10000,94267
