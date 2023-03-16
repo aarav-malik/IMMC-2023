@@ -26,8 +26,8 @@ npvs['net present value'] = net_present_value
 #skiing facilities can only operate 1 quarter of the year
 npvs.at[0,'net present value'] = ((npvs.iloc[0,8])/4)
 
-
+#normalise NPV score ranging between 1 to 10 inclusive
 for x in npvs.iterrows():
-    normalised_net_present_value = 1 + (((npvs['net present value']-np.nanmin(npvs['net present value']))*(1))/(np.nanmax(npvs['net present value'])-np.nanmin(npvs['net present value'])))
-    npvs['Normalised Score'] = normalised_net_present_value
+    normalised_net_present_value = 1 + (((npvs['net present value']-np.nanmin(npvs['net present value']))*(9))/(np.nanmax(npvs['net present value'])-np.nanmin(npvs['net present value'])))
+    npvs['Total NPV score'] = normalised_net_present_value
 print(npvs)
