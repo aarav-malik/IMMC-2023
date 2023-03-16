@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("data/population.csv")
+df = pd.read_csv("data/other data/population.csv")
 df.rename( columns={'Unnamed: 0':'Location'}, inplace=True )
 
 for i, row in df.iterrows():

@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-df = pd.read_csv("data/temperature.csv")
+df = pd.read_csv("data/other data/temperature.csv")
 df.drop(columns=['Year'], inplace=True)
 df.drop(columns=['Annual'], inplace=True)
 
