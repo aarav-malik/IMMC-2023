@@ -6,8 +6,8 @@ EUTRO_WEIGHT = 0.3
 LAND_USE_WEIGHT = 0.2
 WATER_USE_WEIGHT = 0.1
 
-crops = pd.read_csv('data/Food_Production.csv', delimiter=',')
-profits = pd.read_csv('data/foodreturns.csv', delimiter=',')
+crops = pd.read_csv('data/Crop Data/Food_Production.csv', delimiter=',')
+profits = pd.read_csv('data/Crop Data/foodreturns.csv', delimiter=',')
 for index, crop in crops.iterrows():
     ghg_score = ((crop['Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)']-np.nanmin(crops['Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)']))/(np.nanmax(crops['Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)'])-np.nanmin(crops['Greenhouse gas emissions per 1000kcal (kgCO₂eq per 1000kcal)']))) * GHG_WEIGHT
     eutro_score = ((crop['Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)']-np.nanmin(crops['Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)']))/(np.nanmax(crops['Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)'])-np.nanmin(crops['Eutrophying emissions per 1000kcal (gPO₄eq per 1000kcal)']))) * EUTRO_WEIGHT
@@ -32,9 +32,9 @@ PROFIT_WEIGHT = 0.8
 
 
 for profit in profits.iterrows():
-     profit_score = ((profits['Gross Income Per acre($)'])-np.nanmin(profits['Gross Income Per acre($)']))/(np.nanmax(profits["Gross Income Per acre($)"])-np.nanmin(profits['Gross Income Per acre($)']))
+     profit_score = ((profits['Profits Per acre($)'])-np.nanmin(profits['Profits Per acre($)']))/(np.nanmax(profits["Profits Per acre($)"])-np.nanmin(profits['Profits Per acre($)']))
      profits['Profits'] = profit_score
-     overall = 0.2*profits['Environmental Score'] + 0.8*profits['Profits']
+     overall = (0.2*profits['Environmental Score'] + 0.8*profits['Profits'])*10
      profits['Final Score'] = overall
 
 print(profits)

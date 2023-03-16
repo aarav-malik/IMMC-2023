@@ -2,7 +2,7 @@ import csv
 import matplotlib.pyplot as plt
 import statistics
 
-file_name = "data/solarenergy.csv" 
+file_name = "data/Demographics & Energy/solarenergy.csv" 
  
 file = open(file_name)
 file_reader = csv.reader(file)
