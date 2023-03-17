@@ -95,7 +95,7 @@ for i, loc in enumerate(locations.split(',')):
 
 ### TO SEE LOCATION RESULTS, UNCOMMENT THE QUOTATIONS BELOW
 
-'''
+###'''
 from pymoo.indicators.hv import HV
 
 ref_point = np.array([1.2, 1.2])
