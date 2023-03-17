@@ -19,7 +19,7 @@ for index, crop in crops.iterrows():
 
 sorted_crops = crops.sort_values('Environmental Score')  ## Beef, Apples, Potatoes, Tomatoes (Due to climate conditions)
 ENV_WEIGHT = 0.2
-PROFIT_WEIGHT = 0.8
+PROFIT_WEIGHT = 1.2
 
 selected_crops = crops[(crops["Food product"] == "Potatoes") | (crops["Food product"] == "Tomatoes")| (crops["Food product"] == "Beef (beef herd)")| (crops["Food product"] == "Apples")]
 profits['Environmental Value'] = selected_crops.iloc[::-1].reset_index(drop=True)['Environmental Score']
@@ -28,7 +28,7 @@ profits['Environmental Value'] = selected_crops.iloc[::-1].reset_index(drop=True
 for profit in profits.iterrows():
     profit_score = ((profits['Gross Income Per acre($)'])-np.nanmin(profits['Gross Income Per acre($)']))/(np.nanmax(profits["Gross Income Per acre($)"])-np.nanmin(profits['Gross Income Per acre($)']))
     profits['profit gained'] = profit_score
-    overall = 0.2*profits['Environmental Value'] + 0.8*profits['profit gained']
+    overall =  PROFIT_WEIGHT*profits['profit gained'] - ENV_WEIGHT*profits['Environmental Value']
     profits['Final Score'] = overall
 
 sorted_profits = profits.sort_values('Final Score')
