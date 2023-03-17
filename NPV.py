@@ -28,6 +28,6 @@ npvs.at[0,'net present value'] = ((npvs.iloc[0,8])/4)
 
 
 for x in npvs.iterrows():
-    normalised_net_present_value = (((npvs['net present value']-np.nanmin(npvs['net present value']))*(1))/(np.nanmax(npvs['net present value'])-np.nanmin(npvs['net present value'])))*10
+    normalised_net_present_value = 1 + (((npvs['net present value']-np.nanmin(npvs['net present value']))*(9))/(np.nanmax(npvs['net present value'])-np.nanmin(npvs['net present value'])))
     npvs['Normalised Score'] = normalised_net_present_value
 print(npvs)

@@ -37,7 +37,7 @@ final_table['Overall score'] = overall_social_benefits
 
 #normalised total social benefits score ranging between 1 to 10 inclusive
 for x in final_table.iterrows():
-    normalised_socialbenefits = ((final_table['Overall score']-np.nanmin(final_table['Overall score']))*(2-1))/(np.nanmax(final_table['Overall score'])-np.nanmin(final_table['Overall score'])) * 10
+    normalised_socialbenefits = 1 + ((final_table['Overall score']-np.nanmin(final_table['Overall score']))*(9))/(np.nanmax(final_table['Overall score'])-np.nanmin(final_table['Overall score']))
     final_table['Normalised Score'] = normalised_socialbenefits
 
 print(final_table)
