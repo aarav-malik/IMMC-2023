@@ -60,8 +60,6 @@ class FLP(Problem):
 
             loc_NPV = datadict[loc]['NPV']
             loc_SB_scores = datadict[loc]['SB_scores']
-            print(loc_NPV)
-
 
             mask = (selected_locs == self.location_ids[i])
             profit_value = -np.sum(loc_NPV[mask[loc_idx]])
@@ -95,7 +93,7 @@ for i, loc in enumerate(locations.split(',')):
 
 ### TO SEE LOCATION RESULTS, UNCOMMENT THE QUOTATIONS BELOW
 
-###'''
+'''
 from pymoo.indicators.hv import HV
 
 ref_point = np.array([1.2, 1.2])
