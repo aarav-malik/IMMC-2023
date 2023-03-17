@@ -1,2 +1,1 @@
-print(f"Range = {_range}")
-print(f"Minimum = {minimum}")
+Scarcity-weighted water use per kilogram (liters per kilogram)

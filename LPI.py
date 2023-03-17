@@ -68,6 +68,6 @@ _range = sorted_LPI[-1] - sorted_LPI[0]
 
 n=0
 for x in sorted_LPI:
-    normalised = (list_LPI[n] - minimum) / _range * 10
+    normalised = 1+ ((list_LPI[n] - minimum)*9/ _range )
     print(f"{fac[n]} {normalised}")
     n+=1
