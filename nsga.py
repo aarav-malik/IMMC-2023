@@ -46,7 +46,7 @@ problem = FLP(locations, profits, env_scores, social_scores, capacity)
 algorithm = NSGA2(pop_size=3, crossover_prob=0.8, mutation_prob=1/3, tournament_size=3)
 res = minimize(problem, algorithm, seed=1)
 
-best_facilities = np.argsort(profits)[::-1][:2]
+best_facilities = np.argsort(profits)[::-1][:2] 
 
 print("Best facilities for profit making are: ", end="")
 for i, loc in enumerate(locations):
