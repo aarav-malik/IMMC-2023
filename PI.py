@@ -1,5 +1,4 @@
 # Construction Cost * Unemployment% / (Area * Duration)
-# Check crop farm cost, regenerative
 
 fac=['sports centre ','ski facility ','grazing farm ','regenerative farm ','agrivoltaic farm ','agritourist centre ']
 county=['wayne','cayuga','seneca','onondaga','oswego']
