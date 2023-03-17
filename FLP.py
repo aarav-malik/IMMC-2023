@@ -91,8 +91,6 @@ for i, loc in enumerate(locations.split(',')):
         if sel_loc > 0:
             print(f"Selected Location {j+1}: {sel_loc}")
 
-### TO SEE LOCATION RESULTS, UNCOMMENT THE QUOTATIONS BELOW
-
 ###'''
 from pymoo.indicators.hv import HV
 
