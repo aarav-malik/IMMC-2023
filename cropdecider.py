@@ -28,13 +28,13 @@ selected = crops[(crops["Food product"] == "Potatoes") | (crops["Food product"] 
 profits['Environmental Score'] = selected.iloc[::-1].reset_index(drop=True)['Environmental Score']
 
 ENV_WEIGHT = 0.2
-PROFIT_WEIGHT = 0.8
+PROFIT_WEIGHT = 1.2
 
 
 for profit in profits.iterrows():
      profit_score = ((profits['Profits Per acre($)'])-np.nanmin(profits['Profits Per acre($)']))/(np.nanmax(profits["Profits Per acre($)"])-np.nanmin(profits['Profits Per acre($)']))
      profits['Profits'] = profit_score
-     overall = (0.2*profits['Environmental Score'] + 0.8*profits['Profits'])*10
+     overall =  PROFIT_WEIGHT*profits['Profits'] - ENV_WEIGHT*profits['Environmental Score']
      profits['Final Score'] = overall
 
 print(profits)

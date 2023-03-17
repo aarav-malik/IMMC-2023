@@ -1,1 +1,3 @@
-Scarcity-weighted water use per kilogram (liters per kilogram)
+SBweight = 0.3
+PIweight = 0.2
+NPVweight = 0.5

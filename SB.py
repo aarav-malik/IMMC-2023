@@ -27,11 +27,9 @@ salarys['salary benefits'] = salary_benefits
 
 #summation function for over all social benefits (Social interaction and Job salary)
 overall_social_benefits = benefits['Social interaction benefit score'] + salarys['salary benefits']
-print(salarys)
-print(benefits)
 
 final_table = pd.DataFrame({})
-final_table['Facility'] = benefits['Facilities']
+final_table['Facilities'] = benefits['Facilities']
 final_table['Overall score'] = overall_social_benefits
 
 
